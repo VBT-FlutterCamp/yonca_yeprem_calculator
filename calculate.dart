@@ -4,13 +4,23 @@ import 'operation_class.dart';
  
 void main()
 {
+  //If user not enter any value it takes it as 0
+  takeInputProcess() {
+    var input =stdin.readLineSync();
+    final double value = 0; 
+     if(input?.isEmpty ?? true){
+      return value;
+    }
+    return double.parse(input ?? '0');
+  }
     print("Enter first number?");
     // Take first number from user
-    double? number1 = double.parse(stdin.readLineSync()!);
+    
+    double number1 = takeInputProcess();
 
     print("Enter second number?");
     // Take second number from user
-    double? number2 = double.parse(stdin.readLineSync()!);
+    double number2 = takeInputProcess();
  
     print("Enter operation (+, -, *, /, %)");
     // Take operator from user
